@@ -1,0 +1,42 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  display: none;
+
+  background-color: rgba(196, 196, 196, 0.5);
+}
+
+.modal__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 30px 40px;
+
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.modal__modal-close {
+  min-width: 100px;
+  height: 20px;
+}
+
+.modal__title {
+  margin-bottom: 14px;
+
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+}

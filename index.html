@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game of Life</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="game">
+      <div class="game__wrapper">
+        <h1 class="game__title">Game of Life</h1>
+        <div class="game__settings">
+          <h2>Настройки игры</h2>
+          <label class="game__setting">
+            <span>Ширина игрового поля (в клетках):&nbsp;</span>
+            <input id="game-field-width" type="number" value="100" min="1" />
+          </label>
+
+          <label class="game__setting">
+            <span>Высота игрового поля (в клетках):&nbsp;</span>
+            <input id="game-field-height" type="number" value="100" min="1" />
+          </label>
+
+          <label class="game__setting">
+            <span>Скорость игры (меньше = быстрее):&nbsp;</span>
+            <input
+              id="game-speed"
+              type="range"
+              value="50"
+              min="0"
+              max="100"
+              step="10"
+              list="tickmarks"
+              oninput="document.getElementById('game-speed-disp').innerText = this.value"
+            />
+            <span id="game-speed-disp">50</span>
+            <datalist id="tickmarks">
+              <option value="0" label="0%">0%</option>
+              <option value="10"></option>
+              <option value="20"></option>
+              <option value="30"></option>
+              <option value="40"></option>
+              <option value="50" label="50%">50%</option>
+              <option value="60"></option>
+              <option value="70"></option>
+              <option value="80"></option>
+              <option value="90"></option>
+              <option value="100" label="100%">100%</option>
+            </datalist>
+          </label>
+        </div>
+
+        <div class="game__control">
+          <h2>Управление игрой</h2>
+          <button id="create">Создать игру</button>
+          <button id="start" disabled>Запустить игру</button>
+          <button id="stop" disabled>Остановить игру</button>
+        </div>
+      </div>
+
+      <canvas id="game-field" class="game__field"></canvas>
+
+      <div id="modal" class="modal">
+        <div class="modal__inner">
+          <h2 class="modal__title">Game Over!</h2>
+          <button id="modal-close" class="modal__modal-close">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="scripts/main.js"></script>
+  </body>
+</html>
